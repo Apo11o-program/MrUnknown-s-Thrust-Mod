@@ -10,11 +10,6 @@ A powerful mod for **Spaceflight Simulator** that gives you god-like control ove
 * **Fuel Efficiency Control:** Change how fast your fuel burns.
     * Set to `0.5` for double efficiency.
     * Set to `0` for **Infinite Fuel** (0 burn rate).
-* **Real-Time Adjustments:** Change settings mid-flight without restarting.
-* **Smart UI:**
-    * Draggable & Minimizable window.
-    * Remembers window position between game sessions.
-    * Type precise numbers or use stepper buttons (`<<<` `>>>`) for fine-tuning.
 
 ## Installation
 
