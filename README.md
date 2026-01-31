@@ -13,7 +13,7 @@ A powerful mod for **Spaceflight Simulator** that gives you god-like control ove
 
 ## Installation
 
-1.  Download the latest `ThrustMod.dll` (or zip) from the **[Releases](../../releases)** page.
+1.  Download the latest `UnknownMod.dll` (or zip) from the **[Releases](../../releases)** page.
 2.  Navigate to your Spaceflight Simulator installation folder:
     * **Steam:** `Steam\steamapps\common\Spaceflight Simulator\Spaceflight Simulator Game\Spaceflight Simulator_Data\MODS`
 3.  Create a folder named `ThrustMod` (optional, but organized) and drop the `.dll` file inside.
