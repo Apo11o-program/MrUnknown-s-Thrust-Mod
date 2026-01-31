@@ -1,4 +1,4 @@
-﻿using SFS.UI.ModGUI;
+using SFS.UI.ModGUI;
 using SFS.World;
 using SFS.Parts.Modules;
 using UnityEngine; 
@@ -18,22 +18,37 @@ namespace UnknownMod
 
         private string thrustText = "1";
         private string ispInputText = "1";
-        private float currentFuelMultiplier = 1.0f; // The actual logic number
+        private float currentFuelMultiplier = 1.0f;
         
-        private Label manualPercentagePreview; // Shows "80%" next to the Apply button
-        private Label stepperPercentageLabel;  // Shows "100%" between the arrows
+        private Label manualPercentagePreview;
+        private Label stepperPercentageLabel;
 
         private Dictionary<EngineModule, float> originalISPs = new Dictionary<EngineModule, float>();
         private Rocket currentRocket;
 
         private void Start()
         {
+
+        }
+
+        private void Update()
+        {
+            if (PlayerController.main == null) return;
+
+            if (holder == null)
+            {
+                InitializeUI();
+            }
+        }
+
+        private void InitializeUI()
+        {
             holder = Builder.CreateHolder(Builder.SceneToAttach.CurrentScene, "ThrustMod Holder");
 
             window = Builder.CreateWindow(
                 holder.transform, 
                 Builder.GetRandomID(), 
-                380, 350, // Slightly taller for the new layout
+                380, 350, 
                 200, 200, 
                 true, true, 0.95f,      
                 "Thrust Control"
@@ -54,7 +69,7 @@ namespace UnknownMod
             Builder.CreateLabel(thrustPage, 300, 30, 0, 0, "Thrust Multiplier");
             Container thrustInputBox = Builder.CreateContainer(thrustPage);
             thrustInputBox.CreateLayoutGroup(Type.Horizontal, TextAnchor.MiddleCenter, 10f);
-            Builder.CreateTextInput(thrustInputBox, 100, 50, 0, 0, "1", (value) => thrustText = value);
+            Builder.CreateTextInput(thrustInputBox, 100, 50, 0, 0, thrustText, (value) => thrustText = value); // Use variable
             Builder.CreateButton(thrustInputBox, 120, 50, 0, 0, () => ApplyThrust(), "Set Thrust");
 
             Container thrustPresets = Builder.CreateContainer(thrustPage);
@@ -71,12 +86,11 @@ namespace UnknownMod
             Container manualRow = Builder.CreateContainer(ispPage);
             manualRow.CreateLayoutGroup(Type.Horizontal, TextAnchor.MiddleCenter, 5f);
             
-            Builder.CreateTextInput(manualRow, 90, 45, 0, 0, "1", (value) => UpdatePreviewLabel(value));
+            Builder.CreateTextInput(manualRow, 90, 45, 0, 0, ispInputText, (value) => UpdatePreviewLabel(value));
             
-            manualPercentagePreview = Builder.CreateLabel(manualRow, 80, 45, 0, 0, "100%");
+            manualPercentagePreview = Builder.CreateLabel(manualRow, 80, 45, 0, 0, (currentFuelMultiplier * 100f).ToString("F0") + "%");
             
             Builder.CreateButton(manualRow, 100, 45, 0, 0, () => ApplyFromText(), "Apply");
-
 
             Builder.CreateSpace(ispPage, 0, 10);
             Builder.CreateLabel(ispPage, 360, 30, 0, 0, "Fine Tuning");
@@ -88,7 +102,7 @@ namespace UnknownMod
             Builder.CreateButton(stepperRow, 30, 35, 0, 0, () => StepFuel(-0.1f), "<<");
             Builder.CreateButton(stepperRow, 25, 35, 0, 0, () => StepFuel(-0.01f), "<");
 
-            stepperPercentageLabel = Builder.CreateLabel(stepperRow, 80, 35, 0, 0, "100%");
+            stepperPercentageLabel = Builder.CreateLabel(stepperRow, 80, 35, 0, 0, (currentFuelMultiplier * 100f).ToString("F0") + "%");
 
             Builder.CreateButton(stepperRow, 25, 35, 0, 0, () => StepFuel(0.01f), ">");
             Builder.CreateButton(stepperRow, 30, 35, 0, 0, () => StepFuel(0.1f), ">>");
@@ -138,9 +152,10 @@ namespace UnknownMod
             ApplyFuelMultiplierLogic();
         }
 
-
         private void CaptureOriginalStats()
         {
+            if (PlayerController.main == null || PlayerController.main.player.Value == null) return;
+
             if (PlayerController.main.player.Value is Rocket rocket)
             {
                 currentRocket = rocket;
@@ -158,6 +173,8 @@ namespace UnknownMod
 
         public void ApplyFuelMultiplierLogic()
         {
+            if (PlayerController.main == null || PlayerController.main.player.Value == null) return;
+
             if (PlayerController.main.player.Value is Rocket rocket && rocket != currentRocket)
                 CaptureOriginalStats();
             
@@ -196,6 +213,8 @@ namespace UnknownMod
 
         public void SetThrottle(float value)
         {
+            if (PlayerController.main == null || PlayerController.main.player.Value == null) return;
+
             if (PlayerController.main.player.Value is Rocket rocket)
             {
                 rocket.throttle.throttlePercent.Value = value;
