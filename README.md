@@ -1,6 +1,6 @@
 # SFS Thrust & Efficiency Mod
 
-A powerful mod for **Spaceflight Simulator** that gives you god-like control over your rockets. Originally based on the [ThrustMod by MrUnknown](https://github.com/MrUnknown11/SFS-ThrustMod), this enhanced version adds **Fuel Efficiency (ISP) Control**, a completely redesigned UI, and better stability.
+A powerful mod for **Spaceflight Simulator** that let you push throttle above 100% and modify your ISP. Originally based on the [ThrustMod by MrUnknown](https://github.com/MrUnknown11/SFS-ThrustMod), this enhanced version adds **Fuel Efficiency (ISP) Control**, and Supported on latest SFS version.
 
 ![Mod Screenshot](https://files.catbox.moe/c8ggwh.png)
 
@@ -21,8 +21,6 @@ A powerful mod for **Spaceflight Simulator** that gives you god-like control ove
 5.  Launch the game!
 
 ## 🎮 How to Use
-
-Once you are on the launch pad, a **"Thrust Control"** window will appear.
 
 ### Tab 1: Thrust
 * **Presets:** Click `x1`, `x5`, or `x10` to instantly boost power.
