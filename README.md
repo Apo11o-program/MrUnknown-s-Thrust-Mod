@@ -2,7 +2,7 @@
 
 A powerful mod for **Spaceflight Simulator** that gives you god-like control over your rockets. Originally based on the [ThrustMod by MrUnknown](https://github.com/MrUnknown11/SFS-ThrustMod), this enhanced version adds **Fuel Efficiency (ISP) Control**, a completely redesigned UI, and better stability.
 
-![Mod Screenshot](https://via.placeholder.com/800x400?text=Insert+Your+Screenshot+Here)
+![Mod Screenshot](https://files.catbox.moe/c8ggwh.png)
 
 ## 🚀 Key Features
 
