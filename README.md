@@ -4,7 +4,7 @@ A powerful mod for **Spaceflight Simulator** that gives you god-like control ove
 
 ![Mod Screenshot](https://files.catbox.moe/c8ggwh.png)
 
-## 🚀 Key Features
+## Key Features
 
 * **Thrust Multiplier:** Increase your engine power beyond game limits (x5, x10, or custom values).
 * **Fuel Efficiency Control:** Change how fast your fuel burns.
@@ -16,7 +16,7 @@ A powerful mod for **Spaceflight Simulator** that gives you god-like control ove
     * Remembers window position between game sessions.
     * Type precise numbers or use stepper buttons (`<<<` `>>>`) for fine-tuning.
 
-## 📥 Installation
+## Installation
 
 1.  Download the latest `ThrustMod.dll` (or zip) from the **[Releases](../../releases)** page.
 2.  Navigate to your Spaceflight Simulator installation folder:
