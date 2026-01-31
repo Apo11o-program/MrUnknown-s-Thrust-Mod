@@ -17,8 +17,7 @@ A powerful mod for **Spaceflight Simulator** that let you push throttle above 10
 2.  Navigate to your Spaceflight Simulator installation folder:
     * **Steam:** `Steam\steamapps\common\Spaceflight Simulator\Spaceflight Simulator Game\Spaceflight Simulator_Data\MODS`
 3.  Create a folder named `ThrustMod` (optional, but organized) and drop the `.dll` file inside.
-4.  **Requirement:** Ensure you have the `UITools` mod installed (usually required for the window features).
-5.  Launch the game!
+4.  Launch the game!
 
 ## 🎮 How to Use
 
